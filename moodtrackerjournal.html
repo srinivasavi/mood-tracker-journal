@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker Journal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3e5f5; /* Pastel Purple */
+            color: #333; /* Neutral Gray */
+            text-align: center;
+        }
+        header {
+            background-color: #ba68c8; /* Light Purple */
+            color: #fff;
+            padding: 1em 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ba68c8; /* Light Purple */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .entries {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .entry {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9; /* Light Gray */
+            position: relative;
+        }
+        .entry-date {
+            font-size: 14px;
+            color: #999;
+        }
+        .doodle {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mood Tracker Journal</h1>
+    </header>
+    <div class="container">
+        <h2>Record Your Mood</h2>
+        <label for="mood">Select Your Mood:</label>
+        <select id="mood">
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="angry">Angry</option>
+            <option value="lonely">lonely</option>
+            <option value="bored">bored</option>
+            <option value="anxiety">anxiety</option>
+            <option value="guilt">guilt</option>
+            <option value="love">love</option>
+            <option value="confused">confused</option>
+            <option value="not sure">not sure</option>
+            <!-- Add more mood options -->
+        </select>
+        <label for="note">Add a Note:</label>
+        <textarea id="note" rows="4"></textarea>
+        <button onclick="addEntry()">Add Entry</button>
+    </div>
+    <div class="container entries">
+        <h2>Your Mood Entries</h2>
+        <div id="entry-list">
+            <!-- Mood entries will be dynamically added here using JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const entryList = document.getElementById("entry-list");
+
+        function addEntry() {
+            const moodSelect = document.getElementById("mood");
+            const noteInput = document.getElementById("note");
+            const mood = moodSelect.value;
+            const note = noteInput.value;
+
+            const entry = document.createElement("div");
+            entry.className = "entry";
+            entry.innerHTML = `
+                <p class="entry-date">${getCurrentDate()}</p>
+                <p>Mood: ${mood}</p>
+                <p>Note: ${note}</p>
+                <img class="doodle" src="heart-doodle.png" alt="Cute Doodle">
+            `;
+
+            entryList.appendChild(entry);
+
+            moodSelect.value = "happy"; // Reset mood select to default
+            noteInput.value = ""; // Clear note input
+        }
+
+        function getCurrentDate() {
+            const now = new Date();
+            const options = { year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "numeric" };
+            return now.toLocaleDateString("en-US", options);
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Playlist</title>
+    <h1> happy playlist </h1>
+</head>
+<body>
+    <div class="spotify-playlist">
+        <!-- Paste your Spotify embed code here -->
+       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1sJpG21DWugztR91E9fZgY?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Playlist</title>
+</head>
+<body>
+    <div class="spotify-playlist">
+        <!-- Paste your Spotify embed code here -->
+     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1buR1viIOgrYIWWX4j14gL?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Checklist</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+           
+        }
+        .task-list {
+        
+            list-style-type: none;
+            padding: 0;
+            
+        }
+        .task-list li {
+            margin-right: 10px 0 ;
+             display: flex;
+            align-items: center;
+        }
+.task-checkbox {
+            margin-right: 10px;
+        }
+        .task-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .add-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .add-button:hover {
+            background-color: #2980b9;
+        }
+        .add-button:active {
+            transform: scale(0.95);
+        }
+label {
+    display: block;
+    margin-top: 0px;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Checklist</h1>
+        <ul class="task-list" id="taskList">
+            <!-- Existing tasks will be dynamically added here using JavaScript -->
+        </ul>
+        <div>
+            <input type="text" class="task-input" id="taskInput" placeholder="Enter a new task">
+            <button class="add-button" onclick="addTask()">Add Task</button>
+        </div>
+    </div>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskText = taskInput.value.trim();
+
+            if (taskText !== "") {
+                const taskList = document.getElementById("taskList");
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <input type="checkbox" id="task${taskList.children.length + 1}">
+                    <label for="task${taskList.children.length + 1}">${taskText}</label>
+                `;
+                taskList.appendChild(li);
+
+                taskInput.value = ""; // Clear the input field
+            }
+        }
+    </script>
+</body>
+</html>
